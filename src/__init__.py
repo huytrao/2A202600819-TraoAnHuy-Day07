@@ -3,6 +3,7 @@ from .chunking import (
     ChunkingStrategyComparator,
     FixedSizeChunker,
     RecursiveChunker,
+    SemanticHeaderChunker,
     SentenceChunker,
     compute_similarity,
 )
@@ -23,6 +24,7 @@ __all__ = [
     "FixedSizeChunker",
     "SentenceChunker",
     "RecursiveChunker",
+    "SemanticHeaderChunker",
     "ChunkingStrategyComparator",
     "compute_similarity",
     "EmbeddingStore",

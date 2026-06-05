@@ -18,10 +18,20 @@ class KnowledgeBaseAgent:
         self.llm_fn = llm_fn
 
     def answer(self, question: str, top_k: int = 3) -> str:
-        results = self.store.search(question, top_k=top_k)
-        
-        context = "\n\n".join([res["content"] for res in results])
-        
-        prompt = f"Dựa vào các thông tin tham khảo dưới đây:\n\n{context}\n\nHãy trả lời câu hỏi: {question}\n\nTrả lời:"
-        
+        retrieved_chunks = self.store.search(question, top_k=top_k)
+
+        context = "\n\n".join(
+            f"[Chunk {index}]\n{result['content']}"
+            for index, result in enumerate(retrieved_chunks, start=1)
+        )
+
+        prompt = (
+            "You are a helpful knowledge-base assistant. "
+            "Answer the user's question using only the context below. "
+            "If the context is not enough, say that you do not know.\n\n"
+            f"Context:\n{context if context else '[No relevant context found]'}\n\n"
+            f"Question: {question}\n"
+            "Answer:"
+        )
+
         return self.llm_fn(prompt)
