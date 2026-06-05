@@ -199,14 +199,13 @@ Chạy 5 benchmark queries của nhóm trên implementation cá nhân của bạ
 ## 7. What I Learned (5 điểm — Demo)
 
 **Điều hay nhất tôi học được từ thành viên khác trong nhóm:**
-> *Viết 2-3 câu:*
+> *Viết 2-3 câu:* học được cách làm việc nhóm, phối hợp với mọi người. học được cách giải quyết mâu thuẫn công việc.
 
 **Điều hay nhất tôi học được từ nhóm khác (qua demo):**
-> *Viết 2-3 câu:*
+> *Viết 2-3 câu:* dựa theo từng tính chất của loại dữ liệu thì sẽ có cách handle và chunking khác nhau để tạo dữ liệu
 
 **Nếu làm lại, tôi sẽ thay đổi gì trong data strategy?**
-> *Viết 2-3 câu:*
-
+> *Viết 2-3 câu:* với dữ liệu technical thì sẽ format nội dung thành các section sau đó mới tiến hành chunking thì sẽ tốt hơn. từ đó xây dựng structure data để hỗ trợ cho retrieval tốt hơn.
 ---
 
 ## Tự Đánh Giá
