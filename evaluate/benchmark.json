@@ -1,0 +1,91 @@
+[
+  {
+    id q1,
+    query According to LlamaIndex, what are the 6 key characteristics that define an Agentic Application,
+    gold_answer The 6 characteristics are LLM Augmentation, Prompt Chaining, Routing, Parallelism, Orchestration, and Reflection.,
+    expected_source file2_llamaindex_concepts.md,
+    metadata_filter {},
+    tested_metric Chunk Coherence (Tests if the chunking strategy splits a bulleted list in half)
+  },
+  {
+    id q2,
+    query What is the one-time cost to generate contextualized chunks using Claude's prompt caching feature,
+    gold_answer The one-time cost to generate contextualized chunks is $1.02 per million document tokens.,
+    expected_source file3_anthropic_contextual_rag.md,
+    metadata_filter {},
+    tested_metric Grounding Quality (Tests factual accuracy with exact pricing numbers)
+  },
+  {
+    id q3,
+    query What are the five categories of data-backed LLM applications mentioned in the LlamaIndex documentation,
+    gold_answer The five categories are Agents, Workflows, Structured Data Extraction, Query Engines, and Chat Engines.,
+    expected_source file2_llamaindex_concepts.md,
+    metadata_filter {},
+    tested_metric Chunk Coherence (Another test for maintaining semantic completeness across paragraphs)
+  },
+  {
+    id q4,
+    query What is the difference between Cosine Similarity and Euclidean Distance in a Vector Database,
+    gold_answer Cosine Similarity measures the angle between two vectors (disregarding absolute length), while Euclidean Distance measures the absolute straight-line distance between vector endpoints.,
+    expected_source file5_rag_comprehensive_guide.md,
+    metadata_filter {},
+    tested_metric Retrieval Precision (Tests if the embedding model can distinguish highly technical math concepts)
+  },
+  {
+    id q5,
+    query What is the p50 latency difference between Qdrant and Pinecone for 1 million vectors,
+    gold_answer Qdrant achieved a p50 latency of ~2.1 ms, while Pinecone recorded ~4.2 ms.,
+    expected_source file6_rag_definitive_architecture.md,
+    metadata_filter {},
+    tested_metric Grounding Quality (Tests ability to retrieve specific benchmark statistics without hallucination)
+  },
+  {
+    id q6,
+    query According to the internal technical guide, what are the pros and cons of Fixed-Size Chunking,
+    gold_answer Pros Extremely fast processing, uniform data structure, easy to manage capacity. Cons Semantically blind, can split complex words or sentences in half, causing severe noise.,
+    expected_source file5_rag_comprehensive_guide.md,
+    metadata_filter {
+      category technical_guide,
+      access internal
+    },
+    tested_metric Metadata Utility (Forces the system to filter by category before searching)
+  },
+  {
+    id q7,
+    query Based on the internal architecture documents, in what criteria does RAG outperform Fine-Tuning,
+    gold_answer RAG has Low cost (operational search overhead), Real-time update frequency, High Interpretability (provides citations), and Minimum Model Adaptation.,
+    expected_source file6_rag_definitive_architecture.md,
+    metadata_filter {
+      category architecture,
+      access internal
+    },
+    tested_metric Metadata Utility & Recall Trade-off (Crucial test Both file1 and file6 mention RAG vs Fine-tuning. Only filtering ensures it pulls from the 'architecture' file)
+  },
+  {
+    id q8,
+    query How much does combining Contextual Embeddings, Contextual BM25, and Reranking reduce the top-20-chunk retrieval failure rate,
+    gold_answer It reduces the top-20-chunk retrieval failure rate by 67%.,
+    expected_source file3_anthropic_contextual_rag.md,
+    metadata_filter {},
+    tested_metric Retrieval Precision (Tests fetching a specific performance percentage)
+  },
+  {
+    id q9,
+    query In the Ragas evaluation framework, what does the 'Triad of Metrics' consist of,
+    gold_answer It consists of (1) Faithfulness, (2) Answer Relevance, and (3) Context Relevancy.,
+    expected_source file6_rag_definitive_architecture.md,
+    metadata_filter {},
+    tested_metric Chunk Coherence & Semantic Completeness
+  },
+  {
+    id q10,
+    query According to the public business blog, what are the high-impact use cases of RAG across enterprises,
+    gold_answer High-impact use cases include Enterprise Knowledge Management & Internal Search, Customer Support & Virtual Assistants, LegalCompliance Intelligence, Business Intelligence & Analytics, and ResearchSummarization.,
+    expected_source file1_techment_enterprise_rag.md,
+    metadata_filter {
+      category business_blog,
+      access public
+    },
+    tested_metric Metadata Utility (Tests filtering to ensure the LLM answers from a business perspective, not a technical architecture perspective)
+  }
+]
