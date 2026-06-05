@@ -1,0 +1,40 @@
+[
+    {
+        "id": "q1",
+        "query": "According to LlamaIndex, what are the five categories of data-backed LLM applications?",
+        "gold_answer": "The five categories are: Agents, Workflows, Structured Data Extraction, Query Engines, and Chat Engines.",
+        "expected_source": "file2_llamaindex_concepts.md",
+        "metadata_filter": {}
+    },
+    {
+        "id": "q2",
+        "query": "How much does combining Contextual Embeddings and Contextual BM25 reduce the top-20-chunk retrieval failure rate?",
+        "gold_answer": "It reduces the top-20-chunk retrieval failure rate by 49%.",
+        "expected_source": "file3_anthropic_contextual_rag.md",
+        "metadata_filter": {}
+    },
+    {
+        "id": "q3",
+        "query": "In a Vector Database, what is the main drawback of using Euclidean Distance compared to Cosine Similarity?",
+        "gold_answer": "If a text chunk is very long and contains repeated words, the vector length increases, pushing the endpoint away and skewing results, even if the meaning is similar.",
+        "expected_source": "file5_rag_comprehensive_guide.md",
+        "metadata_filter": {}
+    },
+    {
+        "id": "q4",
+        "query": "Based on the internal architecture guide, what are the three specific metrics used to measure the 'Search' phase (Retrieval KPIs)?",
+        "gold_answer": "The three metrics are: Hit Rate, Mean Reciprocal Rank (MRR), and NDCG (Normalized Discounted Cumulative Gain).",
+        "expected_source": "file6_rag_definitive_architecture.md",
+        "metadata_filter": {
+            "category": "architecture",
+            "access": "internal"
+        }
+    },
+    {
+        "id": "q5",
+        "query": "What are the three components of the 'Triad of Metrics' in the Ragas framework?",
+        "gold_answer": "The three components are: Faithfulness, Answer Relevance, and Context Relevancy.",
+        "expected_source": "file6_rag_definitive_architecture.md",
+        "metadata_filter": {}
+    }
+]
