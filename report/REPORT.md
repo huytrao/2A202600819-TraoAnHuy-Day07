@@ -46,17 +46,18 @@ sample dữ liệu có độ tương đồng ngữ nghĩa cao.
 **Domain:** RAG technical documents
 
 **Tại sao nhóm chọn domain này?**
-> *Viết 2-3 câu:* Domain này có tính ứng dụng cao trong việc xây dựng các hệ thống AI nội bộ. Các tài liệu về kiến trúc RAG chứa kiến thức phức tạp, cấu trúc đa dạng, rất phù hợp để thử nghiệm khả năng phân mảnh (chunking) và độ chuẩn xác của retrieval.
+> *Viết 2-3 câu:* Domain này tập trung vào tài liệu kỹ thuật về Retrieval-Augmented Generation (RAG) và Vector Store — đây là nền tảng cốt lõi của Lab Day 7. Các tài liệu có cấu trúc markdown rõ ràng với header phân cấp, phù hợp để so sánh các chunking strategy khác nhau. Nội dung đủ phức tạp (30K ký tự) để thể hiện sự khác biệt rõ rệt giữa các strategy, đồng thời có thể thiết kế benchmark queries đòi hỏi thông tin cụ thể từ đúng tài liệu.
 
 ### Data Inventory
 
-| # | Tên tài liệu | Nguồn | Số ký tự | Metadata đã gán |
-|---|--------------|-------|----------|-----------------|
-| 1 | techment_enterprise_rag.md | Techment Blog | 31894 | category: business_blog, access_level: public |
-| 2 | llamaindex_concepts.md | LlamaIndex Docs | 5780 | category: documentation, access_level: public |
-| 3 | anthropic_contextual_rag.md | Anthropic Blog | 17546 | category: research_blog, access_level: public |
-| 4 | rag_comprehensive_guide.md | Internal Guide | 8322 | category: technical_guide, access_level: internal |
-| 5 | vector_store_notes.md | Class Notes | 2149 | category: documentation, access_level: public |
+| # | Tên tài liệu | Nguồn | Số ký tự | Category | Thời gian |
+|---|--------------|-------|----------|----------|-----------| 
+| 1 | techment_enterprise_rag.md | Techment Blog | 30,314 | business_blog | 2026-06-01 |
+| 2 | llamaindex_concepts.md | LlamaIndex Docs | 5,709 | documentation | 2026-01-15 |
+| 3 | anthropic_contextual_rag.md | Anthropic Blog | 17,316 | research_blog | 2026-05-20 |
+| 4 | rag_comprehensive_guide.md | Internal Guide | 8,231 | technical_guide | 2026-06-05 |
+| 5 | vector_store_notes.md | Class Notes | 2,123 | documentation | 2026-06-05 |
+
 
 ### Metadata Schema
 
@@ -101,9 +102,16 @@ Chạy `ChunkingStrategyComparator().compare()` trên 2-3 tài liệu:
 
 | Thành viên | Strategy | Retrieval Score (/10) | Điểm mạnh | Điểm yếu |
 |-----------|----------|----------------------|-----------|----------|
-| Tôi | | | | |
-| [Tên] | | | | |
-| [Tên] | | | | |
+| Đông Anh|  Custom SemanticHeaderChunker | 8/10 | Section integrity 100%, header giữ context | Chunk count cao hơn recursive |
+| Đức Mạnh | FixedSizeChunker | 6/10 | Dễ implement, chunk đều size | Hay cắt ngang câu/ý |
+|Lê Đạt | SentenceChunker | 7.5/10 | Giữ câu hoàn chỉnh, ít noise | Chunk ngắn, có thể mất heading |
+| An Huy & Công Thái | RecursiveChunker | 8.5/10 | Linh hoạt, tốt với structured docs | Có thể trộn 2 sections | 
+| Thành viên | Strategy | Retrieval Score (/10) | Điểm mạnh | Điểm yếu |
+|-----------|----------|----------------------|-----------|----------|
+| Đông Anh|  Custom SemanticHeaderChunker | 8/10 | Section integrity 100%, header giữ context | Chunk count cao hơn recursive |
+| Đức Mạnh | FixedSizeChunker | 6/10 | Dễ implement, chunk đều size | Hay cắt ngang câu/ý |
+|Lê Đạt | SentenceChunker | 7.5/10 | Giữ câu hoàn chỉnh, ít noise | Chunk ngắn, có thể mất heading |
+| An Huy & Công Thái | RecursiveChunker | 8.5/10 | Linh hoạt, tốt với structured docs | Có thể trộn 2 sections |
 
 **Strategy nào tốt nhất cho domain này? Tại sao?**
 > *Viết 2-3 câu:*
@@ -206,11 +214,11 @@ Chạy 5 benchmark queries của nhóm trên implementation cá nhân của bạ
 | Tiêu chí | Loại | Điểm tự đánh giá |
 |----------|------|-------------------|
 | Warm-up | Cá nhân | 5/ 5 |
-| Document selection | Nhóm | 10/ 10 |
+| Document selection | Nhóm | 9/ 10 |
 | Chunking strategy | Nhóm | 15/ 15 |
-| My approach | Cá nhân | 10/ 10 |
+| My approach | Cá nhân | 9/ 10 |
 | Similarity predictions | Cá nhân | 5/ 5 |
 | Results | Cá nhân | 8/ 10 |
 | Core implementation (tests) | Cá nhân | 25/ 30 |
 | Demo | Nhóm | 5/ 5 |
-| **Tổng** | | **93/ 100** |
+| **Tổng** | | **91/ 100** |
