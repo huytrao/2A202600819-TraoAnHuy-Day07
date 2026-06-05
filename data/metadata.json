@@ -1,0 +1,47 @@
+[
+  {
+    "file_name": "techment_enterprise_rag.md",
+    "metadata": {
+      "source": "Techment Blog",
+      "category": "business_blog",
+      "time": "2026-06-01",
+      "access_level": "public"
+    }
+  },
+  {
+    "file_name": "llamaindex_concepts.md",
+    "metadata": {
+      "source": "LlamaIndex Docs",
+      "category": "documentation",
+      "time": "2026-01-15",
+      "access_level": "public"
+    }
+  },
+  {
+    "file_name": "anthropic_contextual_rag.md",
+    "metadata": {
+      "source": "Anthropic Blog",
+      "category": "research_blog",
+      "time": "2026-05-20",
+      "access_level": "public"
+    }
+  },
+  {
+    "file_name": "rag_comprehensive_guide.md",
+    "metadata": {
+      "source": "Internal Guide",
+      "category": "technical_guide",
+      "time": "2026-06-05",
+      "access_level": "internal"
+    }
+  },
+  {
+    "file_name": "vector_store_notes.md",
+    "metadata": {
+      "source": "Class Notes",
+      "category": "documentation",
+      "time": "2026-06-05",
+      "access_level": "public"
+    }
+  }
+]
