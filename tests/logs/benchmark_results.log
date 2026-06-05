@@ -1,0 +1,222 @@
+=== BENCHMARK RETRIEVAL RESULTS ===
+Thông tin này hỗ trợ Exercise 3.2 (Bảng Benchmark Queries)
+
+*** EVALUATING STRATEGY: fixed_size ***
+
+Query ID: q1
+Question: According to LlamaIndex, what are the five categories of data-backed LLM applications?
+Gold Answer: The five categories are: Agents, Workflows, Structured Data Extraction, Query Engines, and Chat Engines.
+Expected Source: file2_llamaindex_concepts.md
+Retrieved Sources: ['llamaindex_concepts.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: llamaindex_concepts.md_chunk_15 | Score: 0.765
+      Content: k/understanding/rag).  There are endless use cases for data-backed LLM applications but they can be roughly grouped into five categories:  [**Agent...
+  [2] ID: llamaindex_concepts.md_chunk_1 | Score: 0.647
+      Content: tarted/concepts/#large-language-models-llms)  LLMs are the fundamental innovation that launched LlamaIndex. They are an artificial intelligence (AI...
+  [3] ID: llamaindex_concepts.md_chunk_13 | Score: 0.646
+      Content: on-rag)  Retrieval-Augmented Generation (RAG) is a core technique for building data-backed LLM applications with LlamaIndex. It allows LLMs to answ...
+--------------------------------------------------
+Query ID: q2
+Question: How much does combining Contextual Embeddings and Contextual BM25 reduce the top-20-chunk retrieval failure rate?
+Gold Answer: It reduces the top-20-chunk retrieval failure rate by 49%.
+Expected Source: file3_anthropic_contextual_rag.md
+Retrieved Sources: ['anthropic_contextual_rag.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: anthropic_contextual_rag.md_chunk_42 | Score: 0.888
+      Content: al Embeddings reduced the top-20-chunk retrieval failure rate by 35%** (5.7% → 3.7%). -   **Combining Contextual Embeddings and Contextual BM25 red...
+  [2] ID: anthropic_contextual_rag.md_chunk_58 | Score: 0.868
+      Content: cca35bb8d86ea0a23bdeeb699e8e58-3840x2160.png&w=3840&q=75)  _Reranked Contextual Embedding and Contextual BM25 reduces the top-20-chunk retrieval fa...
+  [3] ID: anthropic_contextual_rag.md_chunk_57 | Score: 0.847
+      Content: that Reranked Contextual Embedding and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 67% (5.7% → 1.9%).  ![](https://www.anthr...
+--------------------------------------------------
+Query ID: q3
+Question: In a Vector Database, what is the main drawback of using Euclidean Distance compared to Cosine Similarity?
+Gold Answer: If a text chunk is very long and contains repeated words, the vector length increases, pushing the endpoint away and skewing results, even if the meaning is similar.
+Expected Source: file5_rag_comprehensive_guide.md
+Retrieved Sources: ['rag_comprehensive_guide.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: rag_comprehensive_guide.md_chunk_19 | Score: 0.591
+      Content: system converts the user's question into a query vector ($Q$) and performs mathematical distance calculations against the document vectors ($D$) av...
+  [2] ID: rag_comprehensive_guide.md_chunk_21 | Score: 0.560
+      Content:  $1.0$ indicate higher semantic similarity. This is the top choice for text because it eliminates length bias.  2. **Euclidean Distance ($L_2$ Dist...
+  [3] ID: rag_comprehensive_guide.md_chunk_22 | Score: 0.512
+      Content: nce}(Q, D) = \sqrt{\sum_{i=1}^{n} (Q_i - D_i)^2}$$ A distance of $0$ indicates identical vectors. The major drawback is that if a text chunk is ver...
+--------------------------------------------------
+Query ID: q4
+Question: Based on the internal architecture guide, what are the three specific metrics used to measure the 'Search' phase (Retrieval KPIs)?
+Gold Answer: The three metrics are: Hit Rate, Mean Reciprocal Rank (MRR), and NDCG (Normalized Discounted Cumulative Gain).
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: []
+Result: FAIL
+Top 3 Chunks Retrieved:
+--------------------------------------------------
+Query ID: q5
+Question: What are the three components of the 'Triad of Metrics' in the Ragas framework?
+Gold Answer: The three components are: Faithfulness, Answer Relevance, and Context Relevancy.
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: ['techment_enterprise_rag.md', 'rag_comprehensive_guide.md']
+Result: FAIL
+Top 3 Chunks Retrieved:
+  [1] ID: rag_comprehensive_guide.md_chunk_20 | Score: 0.464
+      Content: g their absolute length. The formula is: $$\text{Cosine Similarity}(Q, D) = \frac{Q \cdot D}{\|Q\| \|D\|} = \frac{\sum_{i=1}^{n} Q_i D_i}{\sqrt{\su...
+  [2] ID: techment_enterprise_rag.md_chunk_15 | Score: 0.400
+      Content: ources consistently highlight that RAG aligns perfectly with 2026 enterprise priorities: **accuracy, explainability, compliance, and cost efficienc...
+  [3] ID: techment_enterprise_rag.md_chunk_85 | Score: 0.398
+      Content: hts tailored for data executives, CTOs, and enterprise architects.   **RAG as a Business Capability, Not a Technical Feature**   RAG directly stren...
+--------------------------------------------------
+
+[SUMMARY - fixed_size]
+Total Queries: 5
+Correct Retrievals: 3
+Retrieval Accuracy (Top-3): 60.00%
+============================================================
+
+*** EVALUATING STRATEGY: by_sentences ***
+
+Query ID: q1
+Question: According to LlamaIndex, what are the five categories of data-backed LLM applications?
+Gold Answer: The five categories are: Agents, Workflows, Structured Data Extraction, Query Engines, and Chat Engines.
+Expected Source: file2_llamaindex_concepts.md
+Retrieved Sources: ['llamaindex_concepts.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: llamaindex_concepts.md_chunk_7 | Score: 0.633
+      Content: You can [learn more about RAG](https://developers.llamaindex.ai/python/framework/understanding/rag). There are endless use cases for data-backed LL...
+  [2] ID: llamaindex_concepts.md_chunk_4 | Score: 0.588
+      Content: -   **Reflection**: The LLM is used to reflect and validate outputs of previous steps or LLM calls, which can be used to guide the application to t...
+  [3] ID: llamaindex_concepts.md_chunk_8 | Score: 0.573
+      Content: This gives it additional flexibility to tackle more complex tasks. [**Workflows**](https://developers.llamaindex.ai/python/framework/llamaagents/wo...
+--------------------------------------------------
+Query ID: q2
+Question: How much does combining Contextual Embeddings and Contextual BM25 reduce the top-20-chunk retrieval failure rate?
+Gold Answer: It reduces the top-20-chunk retrieval failure rate by 49%.
+Expected Source: file3_anthropic_contextual_rag.md
+Retrieved Sources: ['anthropic_contextual_rag.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: anthropic_contextual_rag.md_chunk_24 | Score: 0.860
+      Content: -   **Combining Contextual Embeddings and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 49%** (5.7% → 2.9%). ![](https://www.a...
+  [2] ID: anthropic_contextual_rag.md_chunk_33 | Score: 0.832
+      Content: Our experiments showed that, across various domains, adding a reranking step further optimizes retrieval. Specifically, we found that Reranked Cont...
+  [3] ID: anthropic_contextual_rag.md_chunk_23 | Score: 0.797
+      Content: We use 1 minus recall@20 as our evaluation metric, which measures the percentage of relevant documents that fail to be retrieved within the top 20 ...
+--------------------------------------------------
+Query ID: q3
+Question: In a Vector Database, what is the main drawback of using Euclidean Distance compared to Cosine Similarity?
+Gold Answer: If a text chunk is very long and contains repeated words, the vector length increases, pushing the endpoint away and skewing results, even if the meaning is similar.
+Expected Source: file5_rag_comprehensive_guide.md
+Retrieved Sources: ['rag_comprehensive_guide.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: rag_comprehensive_guide.md_chunk_15 | Score: 0.615
+      Content: 2. **Euclidean Distance ($L_2$ Distance):** Measures the absolute straight-line distance between vector endpoints: $$\text{Euclidean Distance}(Q, D...
+  [2] ID: rag_comprehensive_guide.md_chunk_13 | Score: 0.588
+      Content: Words or text passages with similar semantic relationships are mapped to positions near each other in this high-dimensional space. ### Similarity M...
+  [3] ID: rag_comprehensive_guide.md_chunk_14 | Score: 0.550
+      Content: The formula is: $$\text{Cosine Similarity}(Q, D) = \frac{Q \cdot D}{\|Q\| \|D\|} = \frac{\sum_{i=1}^{n} Q_i D_i}{\sqrt{\sum_{i=1}^{n} Q_i^2} \sqrt{...
+--------------------------------------------------
+Query ID: q4
+Question: Based on the internal architecture guide, what are the three specific metrics used to measure the 'Search' phase (Retrieval KPIs)?
+Gold Answer: The three metrics are: Hit Rate, Mean Reciprocal Rank (MRR), and NDCG (Normalized Discounted Cumulative Gain).
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: []
+Result: FAIL
+Top 3 Chunks Retrieved:
+--------------------------------------------------
+Query ID: q5
+Question: What are the three components of the 'Triad of Metrics' in the Ragas framework?
+Gold Answer: The three components are: Faithfulness, Answer Relevance, and Context Relevancy.
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: ['techment_enterprise_rag.md', 'rag_comprehensive_guide.md']
+Result: FAIL
+Top 3 Chunks Retrieved:
+  [1] ID: techment_enterprise_rag.md_chunk_22 | Score: 0.365
+      Content: **Related Insights:** Learn how [our Microsoft Fabric Readiness Assessment](https://www.techment.com/partnership/microsoft/fabric-readiness/) explo...
+  [2] ID: rag_comprehensive_guide.md_chunk_1 | Score: 0.359
+      Content: These snippets are then packaged as "Context" and sent alongside the original question to the LLM. As a result, the LLM utilizes its natural langua...
+  [3] ID: rag_comprehensive_guide.md_chunk_15 | Score: 0.358
+      Content: 2. **Euclidean Distance ($L_2$ Distance):** Measures the absolute straight-line distance between vector endpoints: $$\text{Euclidean Distance}(Q, D...
+--------------------------------------------------
+
+[SUMMARY - by_sentences]
+Total Queries: 5
+Correct Retrievals: 3
+Retrieval Accuracy (Top-3): 60.00%
+============================================================
+
+*** EVALUATING STRATEGY: recursive ***
+
+Query ID: q1
+Question: According to LlamaIndex, what are the five categories of data-backed LLM applications?
+Gold Answer: The five categories are: Agents, Workflows, Structured Data Extraction, Query Engines, and Chat Engines.
+Expected Source: file2_llamaindex_concepts.md
+Retrieved Sources: ['llamaindex_concepts.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: llamaindex_concepts.md_chunk_18 | Score: 0.847
+      Content: There are endless use cases for data-backed LLM applications but they can be roughly grouped into five categories:
+  [2] ID: llamaindex_concepts.md_chunk_1 | Score: 0.668
+      Content: LLMs are the fundamental innovation that launched LlamaIndex. They are an artificial intelligence (AI) computer system that can understand, generat...
+  [3] ID: llamaindex_concepts.md_chunk_16 | Score: 0.615
+      Content: Retrieval-Augmented Generation (RAG) is a core technique for building data-backed LLM applications with LlamaIndex. It allows LLMs to answer questi...
+--------------------------------------------------
+Query ID: q2
+Question: How much does combining Contextual Embeddings and Contextual BM25 reduce the top-20-chunk retrieval failure rate?
+Gold Answer: It reduces the top-20-chunk retrieval failure rate by 49%.
+Expected Source: file3_anthropic_contextual_rag.md
+Retrieved Sources: ['anthropic_contextual_rag.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: anthropic_contextual_rag.md_chunk_54 | Score: 0.953
+      Content: #### Performance improvements  Our experiments showed that:  -   **Contextual Embeddings reduced the top-20-chunk retrieval failure rate by 35%** (...
+  [2] ID: anthropic_contextual_rag.md_chunk_74 | Score: 0.933
+      Content: Specifically, we found that Reranked Contextual Embedding and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 67% (5.7% → 1.9%).
+  [3] ID: anthropic_contextual_rag.md_chunk_55 | Score: 0.839
+      Content: ![](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7f8d739e491fe6b3ba0e6a9c74e4083d7...
+--------------------------------------------------
+Query ID: q3
+Question: In a Vector Database, what is the main drawback of using Euclidean Distance compared to Cosine Similarity?
+Gold Answer: If a text chunk is very long and contains repeated words, the vector length increases, pushing the endpoint away and skewing results, even if the meaning is similar.
+Expected Source: file5_rag_comprehensive_guide.md
+Retrieved Sources: ['rag_comprehensive_guide.md']
+Result: PASS
+Top 3 Chunks Retrieved:
+  [1] ID: rag_comprehensive_guide.md_chunk_22 | Score: 0.655
+      Content: 1. **Cosine Similarity:** Measures the angle between two vectors, disregarding their absolute length. The formula is: $$\text{Cosine Similarity}(Q,...
+  [2] ID: rag_comprehensive_guide.md_chunk_25 | Score: 0.525
+      Content: A distance of $0$ indicates identical vectors. The major drawback is that if a text chunk is very long and contains repeated words, the vector leng...
+  [3] ID: rag_comprehensive_guide.md_chunk_24 | Score: 0.497
+      Content: 2. **Euclidean Distance ($L_2$ Distance):** Measures the absolute straight-line distance between vector endpoints: $$\text{Euclidean Distance}(Q, D...
+--------------------------------------------------
+Query ID: q4
+Question: Based on the internal architecture guide, what are the three specific metrics used to measure the 'Search' phase (Retrieval KPIs)?
+Gold Answer: The three metrics are: Hit Rate, Mean Reciprocal Rank (MRR), and NDCG (Normalized Discounted Cumulative Gain).
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: []
+Result: FAIL
+Top 3 Chunks Retrieved:
+--------------------------------------------------
+Query ID: q5
+Question: What are the three components of the 'Triad of Metrics' in the Ragas framework?
+Gold Answer: The three components are: Faithfulness, Answer Relevance, and Context Relevancy.
+Expected Source: file6_rag_definitive_architecture.md
+Retrieved Sources: ['techment_enterprise_rag.md', 'rag_comprehensive_guide.md']
+Result: FAIL
+Top 3 Chunks Retrieved:
+  [1] ID: rag_comprehensive_guide.md_chunk_23 | Score: 0.475
+      Content: Values range from $[-1, 1]$. In RAG, values closer to $1.0$ indicate higher semantic similarity. This is the top choice for text because it elimina...
+  [2] ID: techment_enterprise_rag.md_chunk_22 | Score: 0.437
+      Content: RModern RAG systems consist of four tightly integrated components working together to deliver accurate, context-aware outputs.  ### Indexing & Embe...
+  [3] ID: techment_enterprise_rag.md_chunk_89 | Score: 0.408
+      Content: **RAG as a Business Capability, Not a Technical Feature**   RAG directly strengthens:   -   Decision intelligence   -   Operational efficiency   - ...
+--------------------------------------------------
+
+[SUMMARY - recursive]
+Total Queries: 5
+Correct Retrievals: 3
+Retrieval Accuracy (Top-3): 60.00%
+============================================================
+

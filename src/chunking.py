@@ -4,8 +4,8 @@ import math
 import re
 
 
-from langchain_text_splitters import SemanticChunker as LangchainSemanticChunker
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_text_splitters import SemanticChunker as LangchainSemanticChunker
+# from langchain_huggingface import HuggingFaceEmbeddings
 
 
 class SemanticChunker:
@@ -207,13 +207,13 @@ class ChunkingStrategyComparator:
         fixed_chunker = FixedSizeChunker(chunk_size=chunk_size, overlap=20)
         sentence_chunker = SentenceChunker(max_sentences_per_chunk=3)
         recursive_chunker = RecursiveChunker(chunk_size=chunk_size)
-        semantic_chunker = SemanticChunker(threshold_percentile=95)
+        # semantic_chunker = SemanticChunker(threshold_percentile=95)
 
         # Tiến hành chunking dữ liệu đầu vào
         fixed_chunks = fixed_chunker.chunk(text)
         sentence_chunks = sentence_chunker.chunk(text)
         recursive_chunks = recursive_chunker.chunk(text)
-        semantic_chunks = semantic_chunker.chunk(text)
+        # semantic_chunks = semantic_chunker.chunk(text)
 
         # Hàm helper nhanh giúp tính toán thống kê cơ bản
         def _get_stats(chunks: list[str]) -> dict:
@@ -230,5 +230,5 @@ class ChunkingStrategyComparator:
             "fixed_size": _get_stats(fixed_chunks),
             "by_sentences": _get_stats(sentence_chunks),
             "recursive": _get_stats(recursive_chunks),
-            "semantic": _get_stats(semantic_chunks)
+            # "semantic": _get_stats(semantic_chunks)
         }

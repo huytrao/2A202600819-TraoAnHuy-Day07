@@ -1,0 +1,29 @@
+=== COSINE SIMILARITY RESULTS (Hỗ trợ Exercise 3.3) ===
+Bài tập yêu cầu dự đoán cặp nào có độ tương đồng cao nhất/thấp nhất.
+Sau đây là kết quả thực tế để bạn đối chiếu với dự đoán của mình:
+
+Pair 1:
+  Sentence A: Retrieval-Augmented Generation helps LLMs access external knowledge.
+  Sentence B: RAG systems allow language models to retrieve outside information.
+  --> Actual Cosine Similarity: 0.3762
+--------------------------------------------------
+Pair 2:
+  Sentence A: Vector databases store embeddings for similarity search.
+  Sentence B: Chunking text into smaller pieces is crucial for good RAG performance.
+  --> Actual Cosine Similarity: 0.0474
+--------------------------------------------------
+Pair 3:
+  Sentence A: Retrieval-Augmented Generation helps LLMs access external knowledge.
+  Sentence B: I love eating pizza with extra cheese on weekends.
+  --> Actual Cosine Similarity: 0.0239
+--------------------------------------------------
+Pair 4:
+  Sentence A: Python is a great language for beginners.
+  Sentence B: Python is a terrible language for beginners.
+  --> Actual Cosine Similarity: 0.8495
+--------------------------------------------------
+Pair 5:
+  Sentence A: Tôi thích uống cà phê đen đá không đường.
+  Sentence B: Ly cà phê đen đá không đường là thức uống yêu thích của tôi.
+  --> Actual Cosine Similarity: 0.8656
+--------------------------------------------------
