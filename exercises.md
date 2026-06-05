@@ -497,7 +497,13 @@ RecursiveChunker tốt nhất cho domain này vì nó giữ cấu trúc FAQ rõ 
 
 | # | Query | Gold Answer (câu trả lời đúng) | Chunk nào chứa thông tin? |
 |---|-------|-------------------------------|--------------------------|
-|
+| 1 | According to LlamaIndex, what are the five categories of data-backed LLM applications? | Agents, Workflows, Structured Data Extraction, Query Engines, Chat Engines | file2_llamaindex_concepts.md |
+| 2 | How much does combining Contextual Embeddings and Contextual BM25 reduce the top-20-chunk retrieval failure rate? | It reduces the top-20-chunk retrieval failure rate by 49%. | file3_anthropic_contextual_rag.md |
+| 3 | In a Vector Database, what is the main drawback of using Euclidean Distance compared to Cosine Similarity? | If a text chunk is very long and contains repeated words, the vector length increases, pushing the endpoint away and skewing results, even if the meaning is similar. | file5_rag_comprehensive_guide.md |
+| 4 | Based on the internal architecture guide, what are the three specific metrics used to measure the 'Search' phase (Retrieval KPIs)? | The three metrics are: Hit Rate, Mean Reciprocal Rank (MRR), and NDCG (Normalized Discounted Cumulative Gain). | file6_rag_definitive_architecture.md |
+| 5 | What are the three components of the 'Triad of Metrics' in the Ragas framework? | The three components are: Faithfulness, Answer Relevance, and Context Relevancy. | file6_rag_definitive_architecture.md |
+
+
 
 ---
 
